@@ -8,4 +8,5 @@ bundle.js
 client/public/styles/*.css
 regFiles.py
 out.txt
+npm-debug.log
 npm-debug.log.*
