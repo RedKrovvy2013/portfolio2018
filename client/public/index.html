@@ -4,9 +4,30 @@
     <head>
 
     </head>
-    <body ng-controller="main">
+    <body>
 
-        <div ui-view="content"></div>
+        <div id="header-and-content-container">
+
+            <div id="header-container" ui-view="header"></div>
+
+            <div id="content-container">
+
+                <p>
+                    <a ui-sref="app.details.detailsItem({id: 1})">
+                        Shaka
+                    </a>
+                </p>
+                <p>
+                    <a ui-sref="app.details.detailsItem({id: 2})">
+                        Zulu
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div ui-view="detailsItem"></div>
 
         <script src='assets/bundle.js'></script>
 
