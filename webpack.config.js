@@ -24,21 +24,7 @@ module.exports = {
     {
         test: /\.html$/,
         loader: 'raw-loader'
-    },
-    {
-        test: /\.scss$/,
-        use: [{
-            loader: "style-loader"
-        }, {
-            loader: "css-loader"
-        }, {
-            loader: "sass-loader",
-            options: {
-                includePaths: [path.resolve(__dirname, './client')]
-            }
-        }]
-    }
-    ],
+    }],
     loaders: [
       {
         loader: 'babel-loader',

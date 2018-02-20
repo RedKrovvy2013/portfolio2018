@@ -1,0 +1,32 @@
+
+body {
+    margin: 0;
+}
+
+html, body, #header-and-content-container {
+    height: 100%;
+}
+
+#header-and-content-container {
+
+    display: flex;
+    flex-direction: column;
+
+    #header-container {
+        height: 100px;
+        flex: 0 0 auto;
+        border-bottom: 1px solid black;
+    }
+
+    #content-container {
+
+        flex: 1 1 auto;
+        overflow-y: auto;
+
+        .filler {
+            width: 20px;
+            height: 1500px;
+            background-color: orangered;
+        }
+    }
+}

@@ -1,8 +1,5 @@
 var angular = require('angular')
 
-require('./base.scss')
-require('./detailsItem/detailsItem.scss')
-
 var app = angular.module('app', [
     require('angular-ui-router')
 ])
