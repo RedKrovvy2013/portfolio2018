@@ -52,13 +52,14 @@ h1 {
 }
 h2 {
     font-size: $h2-size;
-    font-weight: bold;
+    font-weight: normal;
     color: $grey;
 }
 h3 {
     font-size: $h3-size;
     font-family: 'Ropa Sans', sans-serif;
-    font-weight: normal;
+    font-weight: bold;
+    @include chrome-gradient;
 }
 h4 {
     font-size: $h4-size;
@@ -68,6 +69,24 @@ h4 {
 h5 {
     font-size: $h5-size;
     font-weight: normal;
+}
+
+ul {
+    padding: 1rem 0;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    background: url(../images/bullet.svg) left top .5rem no-repeat;
+    background-size: 1rem;
+    margin: 1rem 0;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 button.regular {
@@ -83,21 +102,6 @@ button.regular {
 button.transparent {
     background-color: transparent;
     border: none;
-}
-
-// below: a very specific type of button, so keeping component more specific than generic
-.interface-section button.sliding {
-    display: block;
-    width: calc(100% - 2 * 2rem);
-    margin: 0 2rem;
-    padding: .3rem 0;
-    text-align: center;
-    background-color: transparent;
-    border: none;
-    background-image: url(../images/dropdown_orange.svg), url(../images/dropdown_orange.svg);
-    background-position: left center, right center;
-    background-repeat: no-repeat, no-repeat;
-    background-size: 2rem;
 }
 
 $checkbox-margin: .6rem;
@@ -139,15 +143,50 @@ $checkbox-margin: .6rem;
 .ui-module {
 
     border: 1px solid $black;
-    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.35);
+    box-shadow: 0 .3rem 1.3rem rgba(0, 0, 0, 0.4);
 
     .hero-section {
         border-bottom: 1px solid $black;
     }
 
+    .content-section {
+        padding: 1rem 1rem 1rem 3rem;
+        background-color: rgba(0, 0, 0, .575);
+        background-image: linear-gradient(rgba(0, 0, 0, .6) 0,
+                                          transparent .9rem,
+                                          transparent 100%);
+
+        .row {
+            display: flex;
+            align-items: baseline;
+            padding: .3rem 0;
+            .value {
+                flex: 1 1 auto;
+                margin-left: 1rem;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
     .interface-section {
-        background-color: rgba(0, 0, 0, .7);
+        background-color: rgba(0, 0, 0, .8);
         text-align: center;
+
+        // below: a very specific type of button,
+        //        so keeping component more specific than generic
+        button.sliding {
+            display: block;
+            width: calc(100% - 2rem);
+            margin: 0 1rem;
+            padding: .3rem 2rem;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            background-image: url(../images/dropdown_orange.svg), url(../images/dropdown_orange.svg);
+            background-position: left 2rem center, right 2rem center;
+            background-repeat: no-repeat, no-repeat;
+            background-size: 2rem;
+        }
     }
 
 }
