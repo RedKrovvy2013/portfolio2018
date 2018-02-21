@@ -4,6 +4,8 @@ var app = angular.module('app', [
     require('angular-ui-router')
 ])
 
+require('./uiModule/uiModule')
+
 app.config(
     function($urlRouterProvider, $stateProvider, $locationProvider){
 

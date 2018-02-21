@@ -1,0 +1,73 @@
+
+.ui-module {
+
+    border: 1px solid $black;
+    box-shadow: 0 .3rem 1.3rem rgba(0, 0, 0, 0.4);
+
+    .hero-section {
+        border-bottom: 1px solid $black;
+        z-index: 2;
+    }
+
+    .content-section-container {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .content-section {
+        padding: 1rem 1rem 1rem 3rem;
+        background-color: rgba(0, 0, 0, .575);
+        background-image: linear-gradient(rgba(0, 0, 0, .6) 0,
+                                          transparent .9rem,
+                                          transparent 100%);
+
+        .ui-module-row {
+            display: flex;
+            align-items: baseline;
+            padding: .3rem 0;
+            .value {
+                flex: 1 1 auto;
+                margin-left: 1rem;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    .interface-section {
+        background-color: rgba(0, 0, 0, .8);
+        text-align: center;
+
+        // below: a very specific type of button,
+        //        so keeping component more specific than generic
+        button.sliding {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 2rem);
+            margin: 0 1rem;
+            padding: .3rem 2rem;
+            background-color: transparent;
+            border: none;
+            .dropdown-icon {
+                width: 2rem;
+                transition: 1s all;
+                &.open {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+    }
+
+}
+
+#advanced-ui-components .hero-section {
+    height: 20rem;
+    background: url(../images/hero_advanced_ui_components.jpg) left top no-repeat;
+    background-size: 125%;
+}
+
+#real-time-graph-updates .hero-section {
+    height: 20rem;
+    background: url(../images/hero_real_time_graph_updates.jpg) left top no-repeat;
+    background-size: 125%;
+}

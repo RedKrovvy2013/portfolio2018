@@ -18,14 +18,9 @@ html, body, #header-and-content-container {
         overflow-y: auto;
         padding: $horizontal-edge-gutter $horizontal-edge-gutter $horizontal-edge-gutter*4;
 
-        .ui-module:not(:last-child) {
+        .grid-row:not(:last-child) {
             margin-bottom: $horizontal-edge-gutter*3;
         }
 
-        .filler {
-            width: 20px;
-            height: 1500px;
-            background-color: orangered;
-        }
     }
 }
