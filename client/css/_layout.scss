@@ -16,6 +16,11 @@ html, body, #header-and-content-container {
 
         flex: 1 1 auto;
         overflow-y: auto;
+        padding: $horizontal-edge-gutter $horizontal-edge-gutter $horizontal-edge-gutter*4;
+
+        .ui-module:not(:last-child) {
+            margin-bottom: $horizontal-edge-gutter*3;
+        }
 
         .filler {
             width: 20px;

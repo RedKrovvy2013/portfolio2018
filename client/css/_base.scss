@@ -62,16 +62,42 @@ h3 {
 }
 h4 {
     font-size: $h4-size;
-    font-weight: bold;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: normal;
 }
 h5 {
     font-size: $h5-size;
     font-weight: normal;
 }
 
+button.regular {
+    background-color: $grey;
+    background-image: linear-gradient(to bottom, $grey-gradient-light, $grey-gradient-dark);
+    border: 1px solid $black;
+    border-radius: .5rem;
+    padding: .5rem 3rem;
+    margin: .4rem 2rem;
+    color: $black;
+}
+
 button.transparent {
     background-color: transparent;
     border: none;
+}
+
+// below: a very specific type of button, so keeping component more specific than generic
+.interface-section button.sliding {
+    display: block;
+    width: calc(100% - 2 * 2rem);
+    margin: 0 2rem;
+    padding: .3rem 0;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    background-image: url(../images/dropdown_orange.svg), url(../images/dropdown_orange.svg);
+    background-position: left center, right center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 2rem;
 }
 
 $checkbox-margin: .6rem;
@@ -108,4 +134,32 @@ $checkbox-margin: .6rem;
         background-image: linear-gradient(to bottom right, $blue-gradient-light, $blue-gradient-dark);
     }
 
+}
+
+.ui-module {
+
+    border: 1px solid $black;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.35);
+
+    .hero-section {
+        border-bottom: 1px solid $black;
+    }
+
+    .interface-section {
+        background-color: rgba(0, 0, 0, .7);
+        text-align: center;
+    }
+
+}
+
+#advanced-ui-components .hero-section {
+    height: 20rem;
+    background: url(../images/hero_advanced_ui_components.jpg) left top no-repeat;
+    background-size: 125%;
+}
+
+#real-time-graph-updates .hero-section {
+    height: 20rem;
+    background: url(../images/hero_real_time_graph_updates.jpg) left top no-repeat;
+    background-size: 125%;
 }
