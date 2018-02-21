@@ -1,11 +1,111 @@
 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
 html {
-    font-size: 10px;
+    font-size: 62.5%;   // 1 rem = 10px; 10px/16px = 62.5%
+    /* 62.5% brings about 10px given default browser size of 16px;
+       this strategy makes the site more accessible to users who set their
+       own browser font size */
+
+    @include respond(tab-land) { // width <= 1200?
+        font-size: 56.25%;     // 1 rem = 9px, 9/16 = 56.25%
+    }
+    // order matters between above and below,
+    //     - else larger 'tab-land' font-size would show on viewport widths
+    //       intended for 'tab-port'
+    @include respond(tab-port) { // width <= 900?
+        font-size: 50%;     // 1 rem = 8px, 8/16 = 50%
+    }
+    @include respond(phone) { // width <= 600?
+        font-size: 50%;
+    }
+    // above: just including for dev, so breakpoint shows up in dev tools
+
+    @include respond(big-desktop) {
+        font-size: 75%;     // 1 rem = 12px, 12/16 = 75%
+    }
+}
+
+body {
+    box-sizing: border-box;
     font-family: 'Arial', sans-serif;
     color: $white;
+    font-size: $p-size;
+    background-color: $bg-grey;
+}
+input, select, textarea, button {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+h1 {
+    font-size: $h1-size;
+    font-weight: normal;
+    @include chrome-gradient;
+}
+h2 {
+    font-size: $h2-size;
+    font-weight: bold;
+    color: $grey;
+}
+h3 {
+    font-size: $h3-size;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: normal;
+}
+h4 {
+    font-size: $h4-size;
+    font-weight: bold;
+}
+h5 {
+    font-size: $h5-size;
+    font-weight: normal;
 }
 
 button.transparent {
     background-color: transparent;
     border: none;
+}
+
+$checkbox-margin: .6rem;
+.checkbox-and-label-container {
+    display: flex;
+    align-items: center;
+    margin: $checkbox-margin $checkbox-margin * 2;
+}
+
+.checkbox-container {
+
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 $checkbox-margin;
+
+    input[type^='checkbox'], .checkbox-icon {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    input[type^='checkbox'] {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .checkbox-icon {
+        background-color: rgba($black, 0.4);
+        border: 1px solid $black;
+        border-radius: 50%;
+    }
+    input[type^='checkbox']:checked + .checkbox-icon {
+        background-color: none;
+        background-image: linear-gradient(to bottom right, $blue-gradient-light, $blue-gradient-dark);
+    }
+
 }

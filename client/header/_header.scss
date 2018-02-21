@@ -1,17 +1,56 @@
 
+#header-container {
+    background-image: url(../images/mtn_in_the_clouds.jpg);
+    background-size: cover;
+}
+
+#resume-and-exp-categories-container {
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $horizontal-edge-gutter;
+    padding-top: $horizontal-edge-gutter;
+}
+
+$resume-width: 4.5rem;
 #resume {
-    width: 8rem;
-    height: 8rem;
+    width: $resume-width;
+    height: $resume-width;
     background: url('../images/resume.svg') no-repeat;
     background-size: 100% 100%;
 }
 
 #exp-categories {
 
+    align-self: flex-end;
+
     .checkbox-label {
         color: $black;
+        font-size: $h5-size;
         font-family: 'Ropa Sans', sans-serif;
-        font-size: 1.7rem;
     }
 
+}
+
+#about-me-and-title-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(black, 0.5);
+    padding: 0 $horizontal-edge-gutter;
+}
+
+#about-me-btn {
+    padding-left: 2.5rem;
+    background: url(../images/dropdown_grey.svg) left center no-repeat;
+    background-size: 2rem;
+    .label {
+        font-weight: bold;
+        @include chrome-gradient;
+    }
+}
+
+#main-title {
+    width: 30rem;
+    height: 2.5rem;
+    margin: .5rem 0;
 }

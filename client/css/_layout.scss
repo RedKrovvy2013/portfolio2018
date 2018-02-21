@@ -1,8 +1,4 @@
 
-body {
-    margin: 0;
-}
-
 html, body, #header-and-content-container {
     height: 100%;
 }
@@ -13,9 +9,7 @@ html, body, #header-and-content-container {
     flex-direction: column;
 
     #header-container {
-        height: 100px;
         flex: 0 0 auto;
-        border-bottom: 1px solid black;
     }
 
     #content-container {

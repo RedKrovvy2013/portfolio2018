@@ -4,25 +4,37 @@
 
     <button id="resume" class="transparent"></button>
 
-    <table id="exp-categories">
-        <tr>
-            <td>
-                <input type="checkbox" id="professional-category-checkbox">
-                <label for="professional-category-checkbox"
-                       class="checkbox-label">
-                   <span>Professional Experience</span>
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="checkbox" id="independent-category-checkbox">
-                <label for="independent-category-checkbox"
-                       class="checkbox-label">
-                   <span>Independent Projects</span>
-                </label>
-            </td>
-        </tr>
-    </table>
+    <div id="exp-categories">
+        <div class="checkbox-and-label-container">
+            <div class="checkbox-container">
+                <input type="checkbox" id="professional-category-checkbox" checked>
+                <div class="checkbox-icon"></div>
+            </div>
+            <label for="professional-category-checkbox"
+                   class="checkbox-label">
+               <span>Professional Experience</span>
+            </label>
+        </div>
+        <div class="checkbox-and-label-container">
+            <div class="checkbox-container">
+                <input type="checkbox" id="professional-category-checkbox" checked>
+                <div class="checkbox-icon"></div>
+            </div>
+            <label for="professional-category-checkbox"
+                   class="checkbox-label">
+               <span>Independent Projects</span>
+            </label>
+        </div>
+    </div>
+
+</div>
+
+<div id="about-me-and-title-container">
+
+    <button id="about-me-btn" class="transparent">
+        <span class="label">About Me</span>
+    </button>
+
+    <img src="images/main_title.svg" id="main-title" alt="Michael Cirone">
 
 </div>
