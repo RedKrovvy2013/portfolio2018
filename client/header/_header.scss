@@ -13,7 +13,7 @@
 }
 
 $resume-width: 4.5rem;
-#resume {
+button#resume {
     width: $resume-width;
     height: $resume-width;
     background: url('../images/resume.svg') no-repeat;
@@ -24,7 +24,7 @@ $resume-width: 4.5rem;
 
     align-self: flex-end;
 
-    .checkbox-label {
+    .checkbox-kit__label {
         color: $black;
         font-size: $h5-size;
         font-family: 'Ropa Sans', sans-serif;
@@ -43,7 +43,7 @@ $resume-width: 4.5rem;
     padding-left: 2.5rem;
     background: url(../images/dropdown_grey.svg) left center no-repeat;
     background-size: 2rem;
-    .label {
+    &__label {
         font-weight: bold;
         @include chrome-gradient;
     }

@@ -71,25 +71,7 @@ h5 {
     font-weight: normal;
 }
 
-ul {
-    padding: 1rem 0;
-}
-
-li {
-    list-style-type: none;
-    padding-left: 1.5rem;
-    background: url(../images/bullet.svg) left top .5rem no-repeat;
-    background-size: 1rem;
-    margin: 1rem 0;
-    &:first-child {
-        margin-top: 0;
-    }
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
-
-button.regular {
+.btn-regular {
     background-color: $grey;
     background-image: linear-gradient(to bottom, $grey-gradient-light, $grey-gradient-dark);
     border: 1px solid $black;
@@ -99,7 +81,7 @@ button.regular {
     color: $black;
 }
 
-button.transparent {
+.btn-transparent {
     background-color: transparent;
     border: none;
 }
@@ -111,29 +93,29 @@ $checkbox-margin: .6rem;
     margin: $checkbox-margin $checkbox-margin * 2;
 }
 
-.checkbox-container {
+.checkbox-kit {
 
     position: relative;
     width: 2rem;
     height: 2rem;
     margin: 0 $checkbox-margin;
 
-    input[type^='checkbox'], .checkbox-icon {
+    &__checkbox, &__checkbox-icon {
         position: absolute;
         width: 100%;
         height: 100%;
     }
-    input[type^='checkbox'] {
+    &__checkbox {
         opacity: 0;
         z-index: 2;
     }
 
-    .checkbox-icon {
+    &__checkbox-icon {
         background-color: rgba($black, 0.4);
         border: 1px solid $black;
         border-radius: 50%;
     }
-    input[type^='checkbox']:checked + .checkbox-icon {
+    &__checkbox:checked + &__checkbox-icon {
         background-color: none;
         background-image: linear-gradient(to bottom right, $blue-gradient-light, $blue-gradient-dark);
     }

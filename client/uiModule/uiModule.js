@@ -11,9 +11,10 @@ angular.module('app').directive('uiModule', function($timeout) {
             // }, 1000)
 
             $timeout(function() {
-                elem.find('.content-section-container').eq(0)
+                elem.find('.ui-module__content-section-container').eq(0)
                 .animate({
-                    height: elem.find('.content-section')[0].getBoundingClientRect().height
+                    height: elem.find('.ui-module__content-section')[0]
+                            .getBoundingClientRect().height
                 }, 1000)
             }, 1000)
         }

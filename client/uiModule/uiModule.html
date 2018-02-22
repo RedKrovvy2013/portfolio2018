@@ -1,34 +1,36 @@
 <div ng-class="{'ui-module': true, 'open': isOpen}" id="real-time-graph-updates">
-    <div class="hero-section"></div>
-    <div class="content-section-container">
-        <div class="content-section">
-            <div class="ui-module-row">
-                <h3 class="label">Project:</h3>
-                <p class="value">Ballparq App</p>
-                <h3 class="label">Role:</h3>
-                <p class="value">UI Developer</p>
+    <div class="ui-module__hero-section"></div>
+    <div class="ui-module__content-section-container">
+        <div class="ui-module__content-section">
+            <div class="ui-module__row">
+                <h3 class="ui-module__row-label">Project:</h3>
+                <p class="ui-module__row-value">Ballparq App</p>
+                <h3 class="ui-module__row-label">Role:</h3>
+                <p class="ui-module__row-value">UI Developer</p>
             </div>
-            <div class="ui-module-row">
-                <h3 class="label">Tech:</h3>
-                <p class="value">AngularJS, D3, SVG, HTML/CSS</p>
+            <div class="ui-module__row">
+                <h3 class="ui-module__row-label">Tech:</h3>
+                <p class="ui-module__row-value">AngularJS, D3, SVG, HTML/CSS</p>
             </div>
-            <ul>
-                <li>
+            <ul class="ui-module__list">
+                <li class="ui-module__list-item">
                     Changes to UI knobs and sliders result in real-time graph updates.
                 </li>
-                <li>
+                <li class="ui-module__list-item">
                     Utilized D3 graphing library, SVG and HTML/CSS to create sleek and informative graph modules.
                 </li>
             </ul>
         </div>
     </div>
-    <div class="interface-section">
-        <button type="text" class="sliding">
+    <div class="ui-module__interface-section">
+        <button type="text" class="ui-module__btn-sliding">
             <img src="images/dropdown_orange.svg"
-                 ng-class="{'dropdown-icon': true, 'open': isOpen}">
+                 ng-class="{'ui-module__btn-sliding-arrow': true,
+                            'ui-module__btn-sliding-arrow--open': isOpen}">
             <h4>Real-time Graph Updates</h4>
             <img src="images/dropdown_orange.svg"
-                 ng-class="{'dropdown-icon': true, 'open': isOpen}">
+                 ng-class="{'ui-module__btn-sliding-arrow': true,
+                            'ui-module__btn-sliding-arrow--open': isOpen}">
         </button>
     </div>
 </div>

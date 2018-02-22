@@ -18,7 +18,7 @@ html, body, #header-and-content-container {
         overflow-y: auto;
         padding: $horizontal-edge-gutter $horizontal-edge-gutter $horizontal-edge-gutter*4;
 
-        .grid-row:not(:last-child) {
+        .grid__row:not(:last-child) {
             margin-bottom: $horizontal-edge-gutter*3;
         }
 
