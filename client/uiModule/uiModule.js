@@ -6,17 +6,37 @@ angular.module('app').directive('uiModule', function($timeout) {
         template: require('./uiModule.html'),
         scope: {},
         link: function($scope, elem, attrs, ctrl) {
-            // $timeout(function() {
-            //     $scope.isOpen = true
-            // }, 1000)
 
-            $timeout(function() {
+            function toggleContentInner(cmd) {
+                var $content = elem.find('.ui-module__content-section')
+                var height = $content[0]
+                             .getBoundingClientRect().height
+
+                if(cmd === 'open') {
+                    var startHeight = 0
+                    var endHeight = height
+                }
+                if(cmd === 'close') {
+                    var startHeight = height
+                    var endHeight = 0
+                }
+
+                $content.eq(0).css(
+                    "top", -endHeight
+                )
+
                 elem.find('.ui-module__content-section-container').eq(0)
-                .animate({
-                    height: elem.find('.ui-module__content-section')[0]
-                            .getBoundingClientRect().height
-                }, 1000)
-            }, 1000)
+                    .animate({height: endHeight}, 1000)
+                $content.eq(0)
+                    .animate({top: -startHeight}, 1000)
+            }
+
+            $scope.isOpen = false
+            $scope.toggleContent = function() {
+                $scope.isOpen = !$scope.isOpen
+                $scope.isOpen ? toggleContentInner("open") :
+                                toggleContentInner("close")
+            }
         }
     }
 })

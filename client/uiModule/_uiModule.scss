@@ -23,11 +23,13 @@
     &__content-section-container {
         height: 0;
         overflow: hidden;
+        position: relative;
+        background-color: rgba(0, 0, 0, .575);
     }
 
     &__content-section {
+        position: absolute;
         padding: 1rem 1rem 1rem 3rem;
-        background-color: rgba(0, 0, 0, .575);
         background-image: linear-gradient(rgba(0, 0, 0, .6) 0,
                                           transparent .9rem,
                                           transparent 100%);
