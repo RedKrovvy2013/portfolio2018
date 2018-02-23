@@ -37,6 +37,23 @@ angular.module('app').directive('uiModule', function($timeout) {
                 $scope.isOpen ? toggleContentInner("open") :
                                 toggleContentInner("close")
             }
+
+            $scope.isPlaying = false
+            $scope.toggleVideo = function() {
+                $scope.isPlaying = !$scope.isPlaying
+                if($scope.isPlaying)
+                    document.querySelector('video').play()
+                else
+                    document.querySelector('video').pause()
+            }
+
+            // setTimeout(function() {
+            //     document.querySelector('video').play()
+            // }, 2000)
+            //
+            // setTimeout(function() {
+            //     document.querySelector('video').pause()
+            // }, 3000)
         }
     }
 })

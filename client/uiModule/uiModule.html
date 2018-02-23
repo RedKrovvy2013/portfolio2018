@@ -1,5 +1,16 @@
 <div ng-class="{'ui-module': true, 'open': isOpen}" id="real-time-graph-updates">
-    <div class="ui-module__hero-section"></div>
+    <div class="ui-module__hero-section">
+        <video class="ui-module__hero-section-video" loop
+               ng-click="toggleVideo()">
+            <source src="images/real_time_graph_updates.mp4" type="video/mp4">
+            Your browser is not supported.
+        </video>
+        <button ng-class="{'btn-control': true,
+                           'btn-control--play': !isPlaying,
+                           'btn-control--pause': isPlaying}"
+                ng-click="toggleVideo()">
+        </button>
+    </div>
     <div class="ui-module__content-section-container">
         <div class="ui-module__content-section">
             <div class="ui-module__row">

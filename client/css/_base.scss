@@ -87,6 +87,22 @@ h5 {
     border: none;
 }
 
+.btn-control {
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    background: rgba(0, 0, 0, 0.5) center center no-repeat;
+
+    &--play {
+        background-image: url(../images/control_play.svg);
+        background-size: 58%;
+    }
+    &--pause {
+        background-image: url(../images/control_pause.svg);
+        background-size: 50%;
+    }
+}
+
 $checkbox-margin: .6rem;
 .checkbox-and-label-container {
     display: flex;
