@@ -14,7 +14,7 @@
     padding-top: $horizontal-edge-gutter;
 }
 
-$resume-width: 4.5rem;
+$resume-width: 6rem;
 button#resume {
     width: $resume-width;
     height: $resume-width;
@@ -60,4 +60,9 @@ button#resume {
     width: 30rem;
     height: 2.5rem;
     margin: .5rem 0;
+}
+
+#main-title-secondary {
+    @include chrome-gradient;
+    align-self: center;
 }
