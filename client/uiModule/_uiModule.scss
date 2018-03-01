@@ -23,17 +23,6 @@
         }
     }
 
-    &__row {
-        display: flex;
-        align-items: baseline;
-        padding: .3rem 0;
-        &-value {
-            flex: 1 1 auto;
-            margin-left: 1rem;
-            margin-right: 1.5rem;
-        }
-    }
-
     &__content-section-container {
         height: 0;
         overflow: hidden;
@@ -43,28 +32,10 @@
 
     &__content-section {
         position: absolute;
-        padding: 1rem 1rem 1rem 3rem;
+        padding: 1rem 2rem 1rem 3rem;
         background-image: linear-gradient(rgba(0, 0, 0, .6) 0,
                                           transparent .9rem,
                                           transparent 100%);
-    }
-
-    &__list {
-        padding: 1rem 0;
-    }
-
-    &__list-item {
-        list-style-type: none;
-        padding-left: 1.5rem;
-        background: url(../images/bullet.svg) left top .5rem no-repeat;
-        background-size: 1rem;
-        margin: 1rem 0;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
     }
 
     &__interface-section {

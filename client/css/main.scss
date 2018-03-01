@@ -3,8 +3,9 @@
 @import 'mixins';
 
 @import 'base';
+@import 'utilities';
 @import 'layout';
 
 @import '../header/header';
-@import '../detailsItem/detailsItem';
+@import '../detailsModule/detailsModule';
 @import '../uiModule/uiModule';

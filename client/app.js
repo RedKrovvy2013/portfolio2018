@@ -31,7 +31,7 @@ app.config(
             url: '/:id',
             views: {
                 'detailsItem@': {
-                    template: require('./detailsItem/detailsItem.html'),
+                    template: require('./detailsModule/detailsModule.html'),
                     controller: function($scope, $stateParams) {
                         $scope.id = $stateParams.id
                     }

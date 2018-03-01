@@ -46,14 +46,6 @@ angular.module('app').directive('uiModule', function($timeout) {
                 else
                     document.querySelector('video').pause()
             }
-
-            // setTimeout(function() {
-            //     document.querySelector('video').play()
-            // }, 2000)
-            //
-            // setTimeout(function() {
-            //     document.querySelector('video').pause()
-            // }, 3000)
         }
     }
 })
