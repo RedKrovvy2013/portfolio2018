@@ -6,6 +6,8 @@
 
 #resume-and-exp-categories-container {
     height: 10rem;
+    max-width: $grid-width;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     padding: 0 $horizontal-edge-gutter;
@@ -33,10 +35,15 @@ button#resume {
 }
 
 #about-me-and-title-container {
+    background-color: rgba(black, 0.5);
+}
+#about-me-and-title {
+    max-width: $grid-width;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding: 0 $horizontal-edge-gutter;
     display: flex;
     justify-content: space-between;
-    background-color: rgba(black, 0.5);
-    padding: 0 $horizontal-edge-gutter;
 }
 
 #about-me-btn {
