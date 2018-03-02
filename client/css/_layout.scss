@@ -57,6 +57,10 @@ html, body, #header-and-content-container {
         }
     }
 
+    .grid-col-1-of-1 {
+        width: 100%;
+    }
+
     .grid-col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
     }

@@ -1,11 +1,29 @@
 var angular = require('angular')
 
+angular.module('app').filter("trustUrl", function ($sce) {
+    return function (recordingUrl) {
+        return $sce.trustAsResourceUrl(recordingUrl)
+    }
+})
+
 angular.module('app').directive('uiModule', function($timeout) {
     return {
         restrict: 'E',
         template: require('./uiModule.html'),
-        scope: {},
-        link: function($scope, elem, attrs, ctrl) {
+        scope: {
+            videoName: '@',
+            title: '@'
+        },
+        transclude: true,
+        link: function($scope, elem, attrs, ctrl, $transclude) {
+
+            $transclude(function(clone){
+                if(clone.length){
+                    $scope.isTranscluding = true
+                }
+            })
+
+            $scope.videoUrl = `images/${$scope.videoName}.mp4`
 
             function toggleContentInner(cmd) {
                 var $content = elem.find('.ui-module__content-section')
@@ -38,13 +56,15 @@ angular.module('app').directive('uiModule', function($timeout) {
                                 toggleContentInner("close")
             }
 
+            $scope.videoId = `${$scope.videoName}-video`
+
             $scope.isPlaying = false
             $scope.toggleVideo = function() {
                 $scope.isPlaying = !$scope.isPlaying
                 if($scope.isPlaying)
-                    document.querySelector('video').play()
+                    document.querySelector(`#${$scope.videoId}`).play()
                 else
-                    document.querySelector('video').pause()
+                    document.querySelector(`#${$scope.videoId}`).pause()
             }
         }
     }

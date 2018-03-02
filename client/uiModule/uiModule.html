@@ -1,9 +1,9 @@
 <div ng-class="{'ui-module': true, 'open': isOpen}" id="real-time-graph-updates">
     <div class="ui-module__hero-section">
-        <video class="ui-module__hero-section-video" loop
-               ng-click="toggleVideo()">
-            <source src="images/real_time_graph_updates.mp4" type="video/mp4">
-            Your browser is not supported.
+        <video id="{{videoId}}"
+               class="ui-module__hero-section-video" loop
+               ng-click="toggleVideo()"
+               ng-src="{{videoUrl | trustUrl}}" type="video/mp4">
         </video>
         <button ng-class="{'btn-control': true,
                            'btn-control--play': !isPlaying,
@@ -12,36 +12,20 @@
         </button>
     </div>
     <div class="ui-module__content-section-container">
-        <div class="ui-module__content-section">
-            <div class="details__row">
-                <h3 class="details__row-label">Project:</h3>
-                <p class="details__row-value">Ballparq App</p>
-                <h3 class="details__row-label">Role:</h3>
-                <p class="details__row-value">UI Developer</p>
-            </div>
-            <div class="details__row">
-                <h3 class="details__row-label">Tech:</h3>
-                <p class="details__row-value">AngularJS, D3, SVG, HTML/CSS</p>
-            </div>
-            <ul class="details__list">
-                <li class="details__list-item">
-                    Changes to UI knobs and sliders result in real-time graph updates.
-                </li>
-                <li class="details__list-item">
-                    Utilized D3 graphing library, SVG and HTML/CSS to create sleek and informative graph modules.
-                </li>
-            </ul>
+        <div class="ui-module__content-section" ng-transclude>
         </div>
     </div>
     <div class="ui-module__interface-section">
-        <button type="text" class="ui-module__btn-sliding" ng-click="toggleContent()">
+        <button ng-if="isTranscluding"
+                type="text" class="ui-module__btn-sliding" ng-click="toggleContent()">
             <img src="images/dropdown_orange.svg"
                  ng-class="{'ui-module__btn-sliding-arrow': true,
                             'ui-module__btn-sliding-arrow--open': isOpen}">
-            <h4>Real-time Graph Updates</h4>
+            <h4>{{title}}</h4>
             <img src="images/dropdown_orange.svg"
                  ng-class="{'ui-module__btn-sliding-arrow': true,
                             'ui-module__btn-sliding-arrow--open': isOpen}">
         </button>
+        <h4 ng-if="!isTranscluding">{{title}}</h4>
     </div>
 </div>
