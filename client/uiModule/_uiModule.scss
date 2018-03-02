@@ -7,12 +7,18 @@
     &__hero-section {
 
         border-bottom: 1px solid $black;
+        background: url(../images/starry_night_sky.png) center center repeat;
+        background-size: cover;
         z-index: 2;
         position: relative;
 
-        &-video {
+        &-image {
+            display: block;
+        }
+
+        &-video, &-image {
             width: 100%;
-            height: 56.25%;
+            object-fit: contain;
             cursor: pointer;
         }
 
@@ -63,11 +69,11 @@
 
 }
 
-#advanced-ui-components .ui-module__hero-section {
-    height: 20rem;
-    background: url(../images/hero_advanced_ui_components.jpg) left top no-repeat;
-    background-size: 125%;
-}
+// #advanced-ui-components .ui-module__hero-section {
+//     height: 20rem;
+//     background: url(../images/hero_advanced_ui_components.jpg) left top no-repeat;
+//     background-size: 125%;
+// }
 
 // #real-time-graph-updates .ui-module__hero-section {
 //     height: 20rem;

@@ -27,7 +27,11 @@
                     <div class="grid-col-1-of-2">
 
                         <div class="ui-module" id="advanced-ui-components">
-                            <div class="ui-module__hero-section"></div>
+                            <div class="ui-module__hero-section">
+                                <img class="ui-module__hero-section-image"
+                                     src="images/hero_advanced_ui_components.png"
+                                     alt="advanced ui components">
+                            </div>
                             <div class="ui-module__interface-section">
                                 <button type="text" class="btn-regular"
                                         ui-sref="app.details.detailsItem({id: 1})">
@@ -62,78 +66,7 @@
 
         </div>
 
-        <!-- <div ui-view="detailsItem"></div> -->
-
-        <div class="details-module">
-
-            <div class="details-module__images-section">
-
-                <img src="images/advanced_ui_components_1.png"
-                     class="details-module__image details-module__image--for-small-devices">
-
-                <img src="images/advanced_ui_components_2.png"
-                     class="details-module__image details-module__image--for-small-devices">
-
-                 <table class="details-module__images-section-for-large-devices">
-                     <tr>
-                         <td>
-                             <img src="images/advanced_ui_components_1.png"
-                                  class="details-module__image">
-                         </td>
-                         <td>
-                             <img src="images/advanced_ui_components_2.png"
-                                  class="details-module__image">
-                         </td>
-                     </tr>
-                 </table>
-
-            </div>
-
-            <h4 class="details-module__header">
-                Advanced UI Components
-            </h4>
-
-            <div class="details-module__content-section">
-
-                <div class="details-module__subheaders">
-
-                    <div class="details__row">
-                        <h3 class="details__row-label">Project:</h3>
-                        <p class="details__row-value">Ballparq App</p>
-                        <h3 class="details__row-label">Role:</h3>
-                        <p class="details__row-value">UI Developer</p>
-                    </div>
-                    <div class="details__row u-margin-bottom-small">
-                        <h3 class="details__row-label">Tech:</h3>
-                        <p class="details__row-value">AngularJS, jQuery UI, HTML/CSS</p>
-                    </div>
-
-                </div>
-
-                <div class="details-module__content u-margin-bottom-small">
-
-                    <ul class="details__list">
-                        <li class="details__list-item">
-                            Developed UI knob component for financial modeling app, where
-                            changes to knob or slider drive financial model's view updates.
-                        </li>
-                        <li class="details__list-item">
-                            Reused knob component directive template to great effect,
-                            throughout app. Also developed attribute directives for text
-                            formatting of data (e.g.-price, number percentage).
-                        </li>
-                    </ul>
-
-                </div>
-
-                <button class="details-module__back-btn btn-transparent"
-                        ui-sref="app">
-                    <img src="images/back_icon.svg" alt="navigate back icon">
-                </button>
-
-            </div>
-
-        </div>
+        <div ui-view="detailsItem"></div>
 
         <script src='assets/bundle.js'></script>
 
