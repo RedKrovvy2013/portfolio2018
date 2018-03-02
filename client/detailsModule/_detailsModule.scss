@@ -46,14 +46,59 @@
     flex-direction: column;
 
     &__images-section {
+
         height: 50%;
         flex: 0 0 auto;
         overflow-y: auto;
+        background: url(../images/starry_night_sky.png) center center repeat;
+
+        @include respond(tab-port-only) {
+            text-align: center;
+        }
+        @include respond(tab-port) {
+            background-size: cover;
+        }
+
+        &-for-large-devices {
+            height: 100%;
+            margin: 0 auto;
+            vertical-align: middle;
+            @include respond(tab-land-and-up) {
+                display: table;
+            }
+            @include respond(tab-port) {
+                display: none;
+            }
+        }
     }
 
     &__image {
-        width: 100%;
-        object-fit: contain;
+        display: block;
+        @include respond(phone) {
+           object-fit: contain;
+           width: 100%;
+           &:not(:last-child) {
+               border-bottom: 1px solid black;
+           }
+        }
+        @include respond(tab-port-only) {
+            margin: $horizontal-edge-gutter * 2 auto;
+        }
+        @include respond(tab-port-and-up) {
+            border: 1px solid $black;
+            box-shadow: 0 .3rem 1.3rem rgba(0, 0, 0, 0.4);
+        }
+        @include respond(tab-land-and-up) {
+            margin: $horizontal-edge-gutter * 2;
+        }
+        &--for-small-devices {
+            @include respond(tab-land-and-up) {
+                display: none;
+            }
+            @include respond(tab-port) {
+                display: block;
+            }
+        }
     }
 
     &__header {
@@ -67,6 +112,12 @@
 
         flex: 1 1 auto;
         padding: 1rem 2rem 1rem 3rem;
+
+        $max-content-section-width: 75rem;
+        @include respond(tab-land-and-up) {
+            padding-left: calc((100% - #{$max-content-section-width}) / 2);
+            padding-right: calc((100% - #{$max-content-section-width}) / 2);
+        }
 
         display: flex;
         flex-direction: column;
