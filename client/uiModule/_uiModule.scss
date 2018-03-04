@@ -10,23 +10,21 @@
         background: url(../images/starry_night_sky.png) center center repeat;
         background-size: cover;
         z-index: 2;
-        position: relative;
 
         &-image {
             display: block;
         }
 
-        &-video, &-image {
+        &-image {
             width: 100%;
             object-fit: contain;
             cursor: pointer;
         }
 
-        .btn-control {
-            position: absolute;
-            bottom: 0;
-            right: 0;
+        .video-module__video {
+            width: 100%;
         }
+
     }
 
     &__content-section-container {

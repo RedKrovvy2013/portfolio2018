@@ -1,0 +1,18 @@
+
+.video-module {
+
+    position: relative;
+
+    &__video {
+        object-fit: contain;
+        cursor: pointer;
+    }
+    // widths of this element are unique to container css: detailsModule, uiModule
+
+    .btn-control {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+}

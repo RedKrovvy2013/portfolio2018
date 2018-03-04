@@ -28,12 +28,12 @@ app.config(
             url: 'details'
         })
         .state('app.details.detailsItem', {
-            url: '/:id',
+            url: '/:name',
             views: {
                 'detailsItem@': {
                     template: require('./detailsModule/detailsModule.html'),
                     controller: function($scope, $stateParams) {
-                        $scope.id = $stateParams.id
+                        $scope.name = $stateParams.name
                     }
                 }
             }

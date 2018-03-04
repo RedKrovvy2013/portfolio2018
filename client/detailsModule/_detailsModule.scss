@@ -45,6 +45,24 @@
     display: flex;
     flex-direction: column;
 
+    .video-module {
+
+        display: table;
+        margin: 0 auto;
+
+        &__video {
+            width: 60rem;
+            @include respond(phone) {
+               width: 100%;
+           }
+        }
+        .btn-control {
+            bottom: auto;
+            top: 0;
+        }
+
+    }
+
     &__images-section {
 
         height: 50%;
@@ -146,4 +164,18 @@
 
         }
     }
+}
+
+#details-debateburgApp {
+
+    .details-module__images-section {
+
+        height: 57%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
 }

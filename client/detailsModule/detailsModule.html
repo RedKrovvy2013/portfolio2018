@@ -1,4 +1,6 @@
-<div class="details-module">
+<div class="details-module"
+     ng-if="name==='advancedUIComponents'"
+     id="details-advancedUIComponents">
 
     <div class="details-module__images-section">
 
@@ -66,5 +68,64 @@
         </button>
 
     </div>
+
+</div>
+
+<div class="details-module"
+     ng-if="name==='debateburgApp'"
+     id="details-debateburgApp">
+
+     <div class="details-module__images-section">
+
+         <video-module video-name="debateburg_app"
+                       class="video-module--for-small-devices">
+         </video-module>
+
+     </div>
+
+     <h4 class="details-module__header">
+         Debateburg App
+     </h4>
+
+     <div class="details-module__content-section">
+
+         <div class="details-module__subheaders">
+
+             <div class="details__row">
+                 <h3 class="details__row-label">Project:</h3>
+                 <p class="details__row-value">Debateburg App</p>
+                 <h3 class="details__row-label">Role:</h3>
+                 <p class="details__row-value">Full-stack Web Developer</p>
+             </div>
+             <div class="details__row u-margin-bottom-small">
+                 <h3 class="details__row-label">Tech:</h3>
+                 <p class="details__row-value">React, Redux, socket.io, MongoDB, HTML/CSS</p>
+             </div>
+
+         </div>
+
+         <div class="details-module__content u-margin-bottom-small">
+
+             <ul class="details__list">
+                 <li class="details__list-item">
+                     Users can A) propose and accept/reject debate resolutions,
+                     B) debate against a competitor!, and C) check out past debates.
+                 </li>
+                 <li class="details__list-item">
+                     Utilized Redux reducer composition to create debate state engine,
+                     which allowed for the following usage spec: "During a debate,
+                     a user can only enter messages if their debate side (pro or con)
+                     is active".
+                 </li>
+             </ul>
+
+         </div>
+
+         <button class="details-module__back-btn btn-transparent"
+                 ui-sref="app">
+             <img src="images/back_icon.svg" alt="navigate back icon">
+         </button>
+
+     </div>
 
 </div>

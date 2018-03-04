@@ -1,15 +1,6 @@
 <div ng-class="{'ui-module': true, 'open': isOpen}" id="real-time-graph-updates">
     <div class="ui-module__hero-section">
-        <video id="{{videoId}}"
-               class="ui-module__hero-section-video" loop
-               ng-click="toggleVideo()"
-               ng-src="{{videoUrl | trustUrl}}" type="video/mp4">
-        </video>
-        <button ng-class="{'btn-control': true,
-                           'btn-control--play': !isPlaying,
-                           'btn-control--pause': isPlaying}"
-                ng-click="toggleVideo()">
-        </button>
+        <video-module video-name="{{videoName}}"></video-module>
     </div>
     <div class="ui-module__content-section-container">
         <div class="ui-module__content-section" ng-transclude>
