@@ -1,22 +1,10 @@
 <div ng-class="{'ui-module': true, 'open': isOpen}">
     <div class="ui-module__hero-section" transclude-id="heroSection">
-        <!-- <video-module video-name="{{videoName}}"></video-module> -->
     </div>
     <div class="ui-module__content-section-container">
         <div class="ui-module__content-section" transclude-id="contentSection">
         </div>
     </div>
-    <div class="ui-module__interface-section">
-        <button ng-if="hasContentSection"
-                type="text" class="ui-module__btn-sliding" ng-click="toggleContent()">
-            <img src="images/dropdown_orange.svg"
-                 ng-class="{'ui-module__btn-sliding-arrow': true,
-                            'ui-module__btn-sliding-arrow--open': isOpen}">
-            <h4>{{title}}</h4>
-            <img src="images/dropdown_orange.svg"
-                 ng-class="{'ui-module__btn-sliding-arrow': true,
-                            'ui-module__btn-sliding-arrow--open': isOpen}">
-        </button>
-        <h4 ng-if="!hasContentSection">{{title}}</h4>
+    <div class="ui-module__interface-section" transclude-id="interfaceSection">
     </div>
 </div>

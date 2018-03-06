@@ -7,29 +7,25 @@ angular.module('app').directive('uiModule', function($timeout) {
         restrict: 'E',
         template: require('./uiModule.html'),
         scope: {
-            // videoName: '?@',
             title: '@'
         },
         transclude: true,
         link: function($scope, elem, attrs, ctrl, $transclude) {
 
+            /* NOTE: going with older way to do multi slot transclusion,
+                     as some modules need transclusion scope to be
+                     from this module (for expandable content)
+            */
+
             $transclude($scope, function(clone) {
                 angular.forEach(clone, function(cloneEl) {
                     if(cloneEl.attributes && cloneEl.attributes["transclude-to"]) {
                         var destinationId = cloneEl.attributes["transclude-to"].value
-                        if(destinationId === "contentSection")
-                            $scope.hasContentSection = true
                         var destination = elem.find('[transclude-id="'+destinationId+'"]')
                         destination.append(cloneEl)
                     }
                 })
             })
-
-            // $transclude(function(clone){
-            //     if(clone.length){
-            //         $scope.isTranscluding = true
-            //     }
-            // })
 
             function toggleContentInner(cmd) {
                 var $content = elem.find('.ui-module__content-section')
