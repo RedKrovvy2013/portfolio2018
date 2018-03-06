@@ -7,7 +7,7 @@ angular.module('app').directive('uiModule', function($timeout) {
         restrict: 'E',
         template: require('./uiModule.html'),
         scope: {
-            title: '@'
+            'isOpen': '<?'
         },
         transclude: true,
         link: function($scope, elem, attrs, ctrl, $transclude) {
@@ -51,11 +51,14 @@ angular.module('app').directive('uiModule', function($timeout) {
                     .animate({top: -startHeight}, 1000)
             }
 
-            $scope.isOpen = false
             $scope.toggleContent = function() {
                 $scope.isOpen = !$scope.isOpen
                 $scope.isOpen ? toggleContentInner("open") :
                                 toggleContentInner("close")
+            }
+
+            if($scope.isOpen) {
+                toggleContentInner("open")
             }
 
         }

@@ -182,6 +182,68 @@
 
                 </div>
 
+                <div class="grid-row">
+
+                    <div class="grid-col-1-of-2">
+
+                        <ui-module is-open="true">
+
+                            <div transclude-to="heroSection">
+                                <img class="ui-module__hero-section-image"
+                                     src="images/hero_zoomsystems.png"
+                                     alt="zoomsystems logo">
+                            </div>
+
+                            <div transclude-to="contentSection">
+                                <div class="details__row">
+                                    <h3 class="details__row-label">Company:</h3>
+                                    <p class="details__row-value">ZoomSystems, Inc.</p>
+                                    <h3 class="details__row-label">Role:</h3>
+                                    <p class="details__row-value">Web Developer</p>
+                                </div>
+                                <div class="details__row">
+                                    <h3 class="details__row-label">Duration:</h3>
+                                    <p class="details__row-value">July 2011 - February 2014</p>
+                                    <h3 class="details__row-label">Tech:</h3>
+                                    <p class="details__row-value">JavaScript, HTML/CSS, JSP</p>
+                                </div>
+                                <ul class="details__list">
+                                    <li class="details__list-item">
+                                        Sole front-end developer used for year-long
+                                        development of high-end, multiple language GUI
+                                        for Nespresso coffee automated retail machine.
+                                        (screenshots of work not available due to client's request)
+                                    </li>
+                                    <li class="details__list-item">
+                                        Became the "Go-to" developer for beautifying kiosk UIs
+                                        for clients, including Best Buy, Nespresso and Benefit.
+                                    </li>
+                                    <li class="details__list-item">
+                                        Developed company's first true A/B test which was deployed
+                                        to over 500 automated retail machines.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div transclude-to="interfaceSection">
+                                <button type="text" class="ui-module__btn-sliding"
+                                        ng-click="toggleContent()">
+                                    <img src="images/dropdown_orange.svg"
+                                         ng-class="{'ui-module__btn-sliding-arrow': true,
+                                                    'ui-module__btn-sliding-arrow--open': isOpen}">
+                                    <h4>Web Developer at ZoomSystems</h4>
+                                    <img src="images/dropdown_orange.svg"
+                                         ng-class="{'ui-module__btn-sliding-arrow': true,
+                                                    'ui-module__btn-sliding-arrow--open': isOpen}">
+                                </button>
+                            </div>
+
+                        </ui-module>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
