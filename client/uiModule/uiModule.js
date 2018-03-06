@@ -7,17 +7,29 @@ angular.module('app').directive('uiModule', function($timeout) {
         restrict: 'E',
         template: require('./uiModule.html'),
         scope: {
-            videoName: '@',
+            // videoName: '?@',
             title: '@'
         },
         transclude: true,
         link: function($scope, elem, attrs, ctrl, $transclude) {
 
-            $transclude(function(clone){
-                if(clone.length){
-                    $scope.isTranscluding = true
-                }
+            $transclude($scope, function(clone) {
+                angular.forEach(clone, function(cloneEl) {
+                    if(cloneEl.attributes && cloneEl.attributes["transclude-to"]) {
+                        var destinationId = cloneEl.attributes["transclude-to"].value
+                        if(destinationId === "contentSection")
+                            $scope.hasContentSection = true
+                        var destination = elem.find('[transclude-id="'+destinationId+'"]')
+                        destination.append(cloneEl)
+                    }
+                })
             })
+
+            // $transclude(function(clone){
+            //     if(clone.length){
+            //         $scope.isTranscluding = true
+            //     }
+            // })
 
             function toggleContentInner(cmd) {
                 var $content = elem.find('.ui-module__content-section')

@@ -20,26 +20,64 @@
 
                     <div class="grid-col-1-of-2">
 
-                        <div class="ui-module" id="advanced-ui-components">
+                        <ui-module title="Desktop Work Logging App">
+                            <div transclude-to="heroSection">
+                                <iframe
+                                    src="https://www.youtube.com/embed/SFbnwdW1qDc?rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </ui-module>
+
+                        <!-- <div class="ui-module">
                             <div class="ui-module__hero-section">
-                                <img class="ui-module__hero-section-image"
-                                     src="images/hero_advanced_ui_components.png"
-                                     alt="advanced ui components">
+                                <iframe
+                                    src="https://www.youtube.com/embed/SFbnwdW1qDc?rel=0"
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    allowfullscreen>
+                                </iframe>
                             </div>
                             <div class="ui-module__interface-section">
-                                <button type="text" class="btn-regular"
-                                        ui-sref="app.details.detailsItem(
-                                            {name: 'advancedUIComponents'})">
-                                    <h4>Advanced UI Components</h4>
-                                </button>
+                                <h4>Desktop Work Logging App</h4>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
                     <div class="grid-col-1-of-2">
 
-                        <ui-module video-name="real_time_graph_updates"
+                        <ui-module title="Real-time Graph Updates">
+
+                            <div transclude-to="heroSection">
+                                <video-module video-name="real_time_graph_updates">
+                                </video-module>
+                            </div>
+
+                            <div transclude-to="contentSection">
+                                <div class="details__row">
+                                    <h3 class="details__row-label">Project:</h3>
+                                    <p class="details__row-value">Ballparq App</p>
+                                    <h3 class="details__row-label">Role:</h3>
+                                    <p class="details__row-value">UI Developer</p>
+                                </div>
+                                <div class="details__row">
+                                    <h3 class="details__row-label">Tech:</h3>
+                                    <p class="details__row-value">AngularJS, D3, SVG, HTML/CSS</p>
+                                </div>
+                                <ul class="details__list">
+                                    <li class="details__list-item">
+                                        Changes to UI knobs and sliders result in real-time graph updates.
+                                    </li>
+                                    <li class="details__list-item">
+                                        Utilized D3 graphing library, SVG and HTML/CSS to create sleek and informative graph modules.
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </ui-module>
+
+                        <!-- <ui-module video-name="real_time_graph_updates"
                                    title="Real-time Graph Updates">
                                <div class="details__row">
                                    <h3 class="details__row-label">Project:</h3>
@@ -59,7 +97,7 @@
                                        Utilized D3 graphing library, SVG and HTML/CSS to create sleek and informative graph modules.
                                    </li>
                                </ul>
-                        </ui-module>
+                        </ui-module> -->
 
                     </div>
 
@@ -69,8 +107,8 @@
 
                     <div class="grid-col-1-of-1">
 
-                        <ui-module video-name="nav_animation_across_pages"
-                                   title="Nav Animation Across Pages"></ui-module>
+                        <!-- <ui-module video-name="nav_animation_across_pages"
+                                   title="Nav Animation Across Pages"></ui-module> -->
 
                     </div>
 
@@ -92,6 +130,25 @@
                                             name: 'debateburgApp'
                                         })">
                                     <h4>Debateburg App</h4>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid-col-1-of-2">
+
+                        <div class="ui-module" id="advanced-ui-components">
+                            <div class="ui-module__hero-section">
+                                <img class="ui-module__hero-section-image"
+                                     src="images/hero_advanced_ui_components.png"
+                                     alt="advanced ui components">
+                            </div>
+                            <div class="ui-module__interface-section">
+                                <button type="text" class="btn-regular"
+                                        ui-sref="app.details.detailsItem(
+                                            {name: 'advancedUIComponents'})">
+                                    <h4>Advanced UI Components</h4>
                                 </button>
                             </div>
                         </div>
