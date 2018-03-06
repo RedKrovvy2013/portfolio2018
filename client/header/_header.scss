@@ -38,31 +38,30 @@ button#resume {
     background-color: rgba(black, 0.5);
 }
 #about-me-and-title {
+
     max-width: $grid-width;
     margin: 0 auto;
     box-sizing: content-box;
     padding: 0 $horizontal-edge-gutter;
     display: flex;
     justify-content: space-between;
-}
 
-#about-me-btn {
-    padding-left: 2.5rem;
-    background: url(../images/dropdown_grey.svg) left center no-repeat;
-    background-size: 2rem;
-    &__label {
-        font-weight: bold;
-        @include chrome-gradient;
+    #about-me-btn {
+        padding-left: 2.5rem;
+        background: url(../images/dropdown_grey.svg) left center no-repeat;
+        background-size: 2rem;
+        &__label {
+            font-weight: bold;
+            @include chrome-gradient;
+        }
     }
-}
 
-#main-title {
-    width: 30rem;
-    height: 2.5rem;
-    margin: .5rem 0;
-}
+    #main-title {
+        // text-transform: uppercase;
+    }
 
-#main-title-secondary {
-    @include chrome-gradient;
-    align-self: center;
+    #main-title-secondary {
+        @include chrome-gradient;
+        align-self: center;
+    }
 }

@@ -22,9 +22,12 @@
 
                         <ui-module>
                             <div transclude-to="heroSection">
-                                <img class="ui-module__hero-section-image"
-                                     src="images/hero_advanced_ui_components.png"
-                                     alt="advanced ui components">
+                                <a ui-sref="app.details.detailsItem(
+                                    {name: 'advancedUIComponents'})">
+                                    <img class="ui-module__hero-section-image"
+                                         src="images/hero_advanced_ui_components.png"
+                                         alt="advanced ui components">
+                                </a>
                             </div>
                             <div transclude-to="interfaceSection">
                                 <button type="text" class="btn-regular"
@@ -113,9 +116,13 @@
 
                         <ui-module>
                             <div transclude-to="heroSection">
-                                <img class="ui-module__hero-section-image"
-                                     src="images/hero_debateburg_app.png"
-                                     alt="debateburg app">
+                                <a ui-sref="app.details.detailsItem({
+                                        name: 'debateburgApp'
+                                    })">
+                                        <img class="ui-module__hero-section-image"
+                                             src="images/hero_debateburg_app.png"
+                                             alt="debateburg app">
+                                </a>
                             </div>
                             <div transclude-to="interfaceSection">
                                 <button type="text" class="btn-regular"

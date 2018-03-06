@@ -73,6 +73,10 @@ h5 {
     font-weight: normal;
 }
 
+button {
+    cursor: pointer;
+}
+
 .btn-regular {
     background-color: $grey;
     background-image: linear-gradient(to bottom, $grey-gradient-light, $grey-gradient-dark);
