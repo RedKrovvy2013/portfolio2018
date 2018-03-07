@@ -73,7 +73,7 @@ logfile.write(logString)
 rmtree(os.path.join(os.getcwd(),otherDirname))
 
 cmds = [
-         "forever start -o outTest.log -e errTest.log " + os.path.join(os.getcwd(),dirname,'server/server.js 80')
+         "forever start -o outTest.log -e errTest.log " + os.path.join(os.getcwd(),dirname,'server/server.js 3000')
        ]
 
 for fullCmd in cmds:

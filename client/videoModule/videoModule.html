@@ -2,7 +2,8 @@
     <video id="{{videoId}}"
            class="video-module__video" loop
            ng-click="toggleVideo()"
-           ng-src="{{videoUrl | trustUrl}}" type="video/mp4">
+           ng-src="{{videoUrl | trustUrl}}" type="video/mp4"
+           poster="/images/{{videoName}}-poster.png">
     </video>
     <button ng-class="{'btn-control': true,
                        'btn-control--play': !isPlaying,

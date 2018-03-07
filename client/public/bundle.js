@@ -46988,7 +46988,7 @@ module.exports = "<div ng-class=\"{'ui-module': true, 'open': isOpen}\">\r\n    
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"video-module\">\r\n    <video id=\"{{videoId}}\"\r\n           class=\"video-module__video\" loop\r\n           ng-click=\"toggleVideo()\"\r\n           ng-src=\"{{videoUrl | trustUrl}}\" type=\"video/mp4\">\r\n    </video>\r\n    <button ng-class=\"{'btn-control': true,\r\n                       'btn-control--play': !isPlaying,\r\n                       'btn-control--pause': isPlaying}\"\r\n            ng-click=\"toggleVideo()\">\r\n    </button>\r\n</div>\r\n"
+module.exports = "<div class=\"video-module\">\r\n    <video id=\"{{videoId}}\"\r\n           class=\"video-module__video\" loop\r\n           ng-click=\"toggleVideo()\"\r\n           ng-src=\"{{videoUrl | trustUrl}}\" type=\"video/mp4\"\r\n           poster=\"/images/{{videoName}}-poster.png\">\r\n    </video>\r\n    <button ng-class=\"{'btn-control': true,\r\n                       'btn-control--play': !isPlaying,\r\n                       'btn-control--pause': isPlaying}\"\r\n            ng-click=\"toggleVideo()\">\r\n    </button>\r\n</div>\r\n"
 
 /***/ }),
 /* 11 */
