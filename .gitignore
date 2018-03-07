@@ -4,8 +4,6 @@ node_modules
 .client
 config.json
 .DS_Store
-bundle.js
-client/public/styles/*.css
 regFiles.py
 out.txt
 npm-debug.log
