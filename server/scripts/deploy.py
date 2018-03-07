@@ -18,6 +18,7 @@ cmdDir = os.path.join(os.getcwd(), "portfolio_"+deployFlag)
 
 cmds = [
          "npm install",
+         "webpack",
          "gulp sass"
        ]
 
