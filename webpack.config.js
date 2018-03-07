@@ -5,14 +5,9 @@ module.exports = {
   entry: [
     './client/app.js'
   ],
-  devServer: {
-    contentBase: './client/public',
-    historyApiFallback: true
-  },
   output: {
-    path: path.resolve(__dirname, "client/public"),
-    publicPath: "/assets/",
-    filename: "bundle.js"
+    path: __dirname,
+    filename: './client/public/bundle.js'
   },
   plugins: [
     new webpack.ProvidePlugin({
