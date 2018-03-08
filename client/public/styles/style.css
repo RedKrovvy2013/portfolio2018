@@ -79,6 +79,10 @@ h5 {
   font-size: 1.92rem;
   font-weight: normal; }
 
+a, a:visited, a:active {
+  color: #fff;
+  text-decoration-color: #11b4e8; }
+
 button {
   cursor: pointer; }
 

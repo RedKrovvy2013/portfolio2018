@@ -73,6 +73,11 @@ h5 {
     font-weight: normal;
 }
 
+a, a:visited, a:active {
+    color: $white;
+    text-decoration-color: $blue;
+}
+
 button {
     cursor: pointer;
 }
