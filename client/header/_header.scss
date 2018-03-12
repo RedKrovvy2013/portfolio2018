@@ -4,64 +4,46 @@
     background-size: cover;
 }
 
-#resume-and-exp-categories-container {
-    height: 10rem;
-    max-width: $grid-width;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 $horizontal-edge-gutter;
-    padding-top: $horizontal-edge-gutter;
-}
+.header {
 
-$resume-width: 6rem;
-button#resume {
-    width: $resume-width;
-    height: $resume-width;
-    background: url('../images/resume.svg') no-repeat;
-    background-size: 100% 100%;
-}
-
-#exp-categories {
-
-    align-self: flex-end;
-
-    .checkbox-kit__label {
-        color: $black;
-        font-size: $h5-size;
-        font-family: 'Ropa Sans', sans-serif;
-    }
-
-}
-
-#about-me-and-title-container {
-    background-color: rgba(black, 0.5);
-}
-#about-me-and-title {
-
-    max-width: $grid-width;
-    margin: 0 auto;
-    box-sizing: content-box;
-    padding: 0 $horizontal-edge-gutter;
-    display: flex;
-    justify-content: space-between;
-
-    #about-me-btn {
-        padding-left: 2.5rem;
-        background: url(../images/dropdown_grey.svg) left center no-repeat;
-        background-size: 2rem;
-        &__label {
-            font-weight: bold;
-            @include chrome-gradient;
+    &__resume-container {
+        height: 10rem;
+        @include respond(phone) {
+            height: 8rem;
         }
+        max-width: $grid-width;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $horizontal-edge-gutter;
+        padding-top: $horizontal-edge-gutter;
     }
 
-    #main-title {
-        // text-transform: uppercase;
+    $resume-width: 6rem;
+    &__resume {
+        width: $resume-width;
+        height: $resume-width;
+        background: url('../images/resume.svg') no-repeat;
+        background-size: 100% 100%;
     }
 
-    #main-title-secondary {
+    &__title-container {
+        background-color: rgba(black, 0.5);
+    }
+    &__title {
+
+        max-width: $grid-width;
+        margin: 0 auto;
+        box-sizing: content-box;
+        padding: 0 $horizontal-edge-gutter;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__main-title-secondary {
         @include chrome-gradient;
         align-self: center;
     }
+
 }

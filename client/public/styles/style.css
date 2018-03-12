@@ -34,9 +34,6 @@ html {
   @media (max-width: 37.5em) {
     html {
       font-size: 50%; } }
-  @media (min-width: 112.5em) {
-    html {
-      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
@@ -216,7 +213,7 @@ html, body, #header-and-content-container {
   background-image: url(../images/mtn_in_the_clouds.jpg);
   background-size: cover; }
 
-#resume-and-exp-categories-container {
+.header__resume-container {
   height: 10rem;
   max-width: 150rem;
   margin: 0 auto;
@@ -224,44 +221,32 @@ html, body, #header-and-content-container {
   justify-content: space-between;
   padding: 0 1rem;
   padding-top: 1rem; }
+  @media (max-width: 37.5em) {
+    .header__resume-container {
+      height: 8rem; } }
 
-button#resume {
+.header__resume {
   width: 6rem;
   height: 6rem;
   background: url("../images/resume.svg") no-repeat;
   background-size: 100% 100%; }
 
-#exp-categories {
-  align-self: flex-end; }
-  #exp-categories .checkbox-kit__label {
-    color: #000;
-    font-size: 1.92rem;
-    font-family: 'Ropa Sans', sans-serif; }
-
-#about-me-and-title-container {
+.header__title-container {
   background-color: rgba(0, 0, 0, 0.5); }
 
-#about-me-and-title {
+.header__title {
   max-width: 150rem;
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 1rem;
   display: flex;
   justify-content: space-between; }
-  #about-me-and-title #about-me-btn {
-    padding-left: 2.5rem;
-    background: url(../images/dropdown_grey.svg) left center no-repeat;
-    background-size: 2rem; }
-    #about-me-and-title #about-me-btn__label {
-      font-weight: bold;
-      background-image: linear-gradient(to bottom, #fafafa, #949494);
-      -webkit-background-clip: text;
-      color: transparent; }
-  #about-me-and-title #main-title-secondary {
-    background-image: linear-gradient(to bottom, #fafafa, #949494);
-    -webkit-background-clip: text;
-    color: transparent;
-    align-self: center; }
+
+.header__main-title-secondary {
+  background-image: linear-gradient(to bottom, #fafafa, #949494);
+  -webkit-background-clip: text;
+  color: transparent;
+  align-self: center; }
 
 .details__row {
   display: flex;

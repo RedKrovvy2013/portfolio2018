@@ -28,10 +28,6 @@ html {
         font-size: 50%;
     }
     // above: just including for dev, so breakpoint shows up in dev tools
-
-    @include respond(big-desktop) {
-        font-size: 75%;     // 1 rem = 12px, 12/16 = 75%
-    }
 }
 
 body {
