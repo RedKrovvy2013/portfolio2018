@@ -14,7 +14,7 @@
         max-width: $grid-width;
         margin: 0 auto;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
         padding: 0 $horizontal-edge-gutter;
         padding-top: $horizontal-edge-gutter;
     }
@@ -25,6 +25,44 @@
         height: $resume-width;
         background: url('../images/resume.svg') no-repeat;
         background-size: 100% 100%;
+    }
+
+    // $youtube-link-width: $resume-width * .8;
+    // &__youtube-link {
+    //     width: 2.7381 * $youtube-link-width;
+    //     height: $youtube-link-width;
+    //     background: url('../images/youtube_link.svg') no-repeat;
+    //     background-size: 100% 100%;
+    //     margin-left: 1.5rem;
+    // }
+
+    &__youtube-link {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        margin-left: 1.5rem;
+
+        border: 2px solid black;
+        background-color: white;
+
+        &-logo {
+            height: 2.4rem;
+            object-fit: contain;
+            margin-top: .4rem;
+        }
+
+        &-label {
+            text-transform: uppercase;
+            font-size: $p-size * .8;
+            font-weight: bold;
+            color: black;
+            margin: .3rem .6rem;
+        }
+
     }
 
     &__title-container {
