@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+        <div class="headed-content">
+
+            <h2 class="headed-content__header">
+                TV Shows
+            </h2>
+
+            <div class="headed-content__content">
+                <keyword-tags tag-values="Billions, Westworld"></keyword-tags>
+            </div>
+
+        </div>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+        <template id="keyword-tag-template">
+            <button class="keyword-tag" type="button">
+                <p class="keyword">
+                    <!-- value inserts here -->
+                </p>
+                <div class="delete-icon"></div>
+            </button>
+        </template>
+
+        <template id="keyword-tags-template">
+            <div class="keyword-tags-kit">
+                <div class="keyword-tags">
+                </div>
+                <input class="keyword-input" type="text">
+            </div>
+            <style>
+                * {
+                    margin: 0;
+                    font-size: inherit;
+                }
+                .keyword-tags-kit {
+                    font-family: sans-serif;
+                    /* above: having to duplicate global css */
+                    display: flex;
+                    width: 50rem;
+                    padding: .7rem 1.2rem;
+                    border: 1px solid darkgrey;
+                    font-size: 1.5rem;
+                }
+                .keyword-tags {
+                    display: flex;
+                }
+                button.keyword-tag {
+                    display: flex;
+                    align-items: center;
+                    padding: .5rem;
+                    background-color: white;
+                    border: 1px solid lightgrey;
+                    border-radius: .5rem;
+                    box-shadow: 0 .2rem .1rem rgba(0,0,0,0.1);
+                    outline: none;
+                    margin-right: 1.2rem;
+                    cursor: pointer;
+                }
+                .delete-icon {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    margin-left: .5rem;
+                    background: url(close.svg) center center no-repeat;
+                    background-size: 100% 100%;
+                }
+                .keyword-input {
+                    border: none;
+                    outline: none;
+                    flex-grow: 1;
+                }
+            </style>
+        </template>
+
+        <script>
+
+            class KeywordTags extends HTMLElement {
+
+                constructor() {
+                    super()
+
+                    var shadow = this.shadow = this.attachShadow({mode: 'open'})
+
+                    var tagsTemplate = this.tagsTemplate = document.getElementById('keyword-tags-template')
+                    shadow.appendChild(tagsTemplate.content.cloneNode(true))
+
+                    var keywordTagsContainer = this.keywordTagsContainer = shadow.querySelector(".keyword-tags")
+                    var tagTemplate = this.tagTemplate = document.getElementById('keyword-tag-template')
+
+                    var tagValues = this.getAttribute('tag-values')
+                    tagValues = tagValues.split(',')
+                    tagValues.forEach((tagValue) => {
+                        tagValue = tagValue.trim()
+                        this.addTag(tagValue)
+                    })
+
+                    var input = this.input = shadow.querySelector("input")
+                    input.addEventListener("keydown", (e) => {
+                        if(e.key === "Enter" || e.key === ",") {
+                            e.preventDefault() // stop comma from being added..
+                            this.addTag(input.value)
+                            input.value = ''
+                        }
+                        if(e.key === "Backspace" && input.value === '') {
+                            this.removeLastTag()
+                        }
+                    })
+
+                }
+
+                addTag(tagValue) {
+                    var tag_docFrag = this.tagTemplate.content.cloneNode(true)
+                    var keywordNode = tag_docFrag.querySelector(".keyword")
+                    keywordNode.textContent = tagValue
+                    this.keywordTagsContainer.appendChild(
+                        tag_docFrag
+                    )
+                    // cloned node is a document fragment, and can't have event listeners attached
+                    //     - more info: https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment
+                    var tagNode = this.getLastTag()
+                    // so, get newly added node and add event listener like so
+                    tagNode.addEventListener("click", (e) => {
+                        this.removeTag(tagNode)
+                    })
+                }
+
+                removeTag(tagNode) {
+                    this.keywordTagsContainer.removeChild(tagNode)
+                }
+
+                removeLastTag() {
+                    var lastTag = this.getLastTag()
+                    if(lastTag !== null)
+                        this.removeTag(lastTag)
+                }
+
+                getLastTag() {
+                    var tagNodes = this.keywordTagsContainer.querySelectorAll('.keyword-tag')
+                    return tagNodes.length ? tagNodes[tagNodes.length-1] : null
+                }
+
+                // called when element is added to DOM
+                connectedCallback() {
+                    // coouuld do creation of pre-set keyword tags here..
+                }
+
+            }
+            customElements.define('keyword-tags', KeywordTags)
+
+        </script>
+
+    </body>
+</html>
