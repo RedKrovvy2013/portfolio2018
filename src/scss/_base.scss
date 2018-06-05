@@ -1,0 +1,146 @@
+
+*,
+*::after,
+*::before {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // font-size: 62.5%;   // 1 rem = 10px; 10px/16px = 62.5%
+    /* 62.5% brings about 10px given default browser size of 16px;
+       this strategy makes the site more accessible to users who set their
+       own browser font size */
+    font-size: 56%;
+
+    @include respond(tab-land) { // width <= 1200?
+        font-size: 50%;     // 1 rem = 9px, 9/16 = 56.25%
+    }
+    // order matters between above and below,
+    //     - else larger 'tab-land' font-size would show on viewport widths
+    //       intended for 'tab-port'
+    @include respond(tab-port) { // width <= 900?
+        font-size: 50%;     // 1 rem = 8px, 8/16 = 50%
+    }
+    @include respond(phone) { // width <= 600?
+        font-size: 50%;
+    }
+    // above: just including for dev, so breakpoint shows up in dev tools
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: $white;
+    font-size: $p-size;
+    background-color: $bg-grey;
+}
+input, select, textarea, button {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+h1 {
+    font-size: $h1-size;
+    font-weight: normal;
+    @include chrome-gradient;
+}
+h2 {
+    font-size: $h2-size;
+    font-weight: normal;
+    color: $grey;
+}
+h3 {
+    font-size: $h3-size;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: bold;
+    @include chrome-gradient;
+}
+h4 {
+    font-size: $h4-size;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: normal;
+}
+h5 {
+    font-size: $h5-size;
+    font-weight: normal;
+}
+
+a, a:visited, a:active {
+    color: $white;
+    text-decoration-color: $blue;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-regular {
+    background-color: $grey;
+    background-image: linear-gradient(to bottom, $grey-gradient-light, $grey-gradient-dark);
+    border: 1px solid $black;
+    border-radius: .5rem;
+    padding: .5rem 3rem;
+    margin: .4rem 2rem;
+    color: $black;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: none;
+}
+
+.btn-control {
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    background: rgba(0, 0, 0, 0.5) center center no-repeat;
+
+    &--play {
+        background-image: url(/assets/control_play.svg);
+        background-size: 58%;
+    }
+    &--pause {
+        background-image: url(/assets/images/control_pause.svg);
+        background-size: 50%;
+    }
+}
+
+$checkbox-margin: .6rem;
+.checkbox-and-label-container {
+    display: flex;
+    align-items: center;
+    margin: $checkbox-margin $checkbox-margin * 2;
+}
+
+.checkbox-kit {
+
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 $checkbox-margin;
+
+    &__checkbox, &__checkbox-icon {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    &__checkbox {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    &__checkbox-icon {
+        background-color: rgba($black, 0.4);
+        border: 1px solid $black;
+        border-radius: 50%;
+    }
+    &__checkbox:checked + &__checkbox-icon {
+        background-color: none;
+        background-image: linear-gradient(to bottom right, $blue-gradient-light, $blue-gradient-dark);
+    }
+
+}

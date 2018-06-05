@@ -1,0 +1,77 @@
+
+@import '../../scss/vars';
+@import '../../scss/mixins';
+
+.header {
+    background-image: url(/assets/mtn_in_the_clouds.jpg);
+    background-size: cover;
+}
+
+.resume-container {
+    height: 10rem;
+    @include respond(phone) {
+        height: 8rem;
+    }
+    max-width: $grid-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 $horizontal-edge-gutter;
+    padding-top: $horizontal-edge-gutter;
+}
+
+$resume-width: 6rem;
+.resume {
+    width: $resume-width;
+    height: $resume-width;
+    background: url('/assets/resume.svg') no-repeat;
+    background-size: 100% 100%;
+}
+
+.youtube-link {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    margin-left: 1.5rem;
+
+    border: 2px solid black;
+    background-color: white;
+
+    &-logo {
+        height: 2.4rem;
+        object-fit: contain;
+        margin-top: .4rem;
+    }
+
+    &-label {
+        text-transform: uppercase;
+        font-size: $p-size * .8;
+        font-weight: bold;
+        color: black;
+        margin: .3rem .6rem;
+    }
+
+}
+
+.title-container {
+    background-color: rgba(black, 0.5);
+}
+.title {
+
+    max-width: $grid-width;
+    margin: 0 auto;
+    box-sizing: content-box;
+    padding: 0 $horizontal-edge-gutter;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.main-title-secondary {
+    @include chrome-gradient;
+    align-self: center;
+}
