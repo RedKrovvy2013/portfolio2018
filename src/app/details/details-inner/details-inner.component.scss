@@ -1,0 +1,82 @@
+
+@import '../../../scss/vars';
+@import '../../../scss/mixins';
+
+
+.details {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.images-section {
+
+    height: 50%;
+    flex: 0 0 auto;
+    overflow-y: auto;
+    background: url(/assets/starry_night_sky.png) center center repeat;
+
+    @include respond(tab-port-only) {
+        text-align: center;
+    }
+    @include respond(tab-port) {
+        background-size: cover;
+    }
+
+}
+
+.header {
+    flex: 0 0 auto;
+    background-color: $black;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.content-section {
+
+    flex: 1 1 auto;
+    padding: 1rem 2rem 1rem 3rem;
+
+    $max-content-section-width: 75rem;
+    @include respond(tab-land-and-up) {
+        padding-left: calc((100% - #{$max-content-section-width}) / 2);
+        padding-right: calc((100% - #{$max-content-section-width}) / 2);
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .back-btn {
+
+        flex: 0 0 auto;
+        text-align: left;
+
+        img {
+            height: $h5-size;
+            object-fit: contain;
+        }
+    }
+
+}
+
+
+#details-debateburgApp {
+
+    .images-section {
+
+        height: 57%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+}

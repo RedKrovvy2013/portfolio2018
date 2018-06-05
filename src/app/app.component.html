@@ -1,2 +1,37 @@
 
-<app-header></app-header>
+<div id="header-and-content-container">
+
+    <app-header></app-header>
+
+    <div id="content-container">
+
+        <div class="grid-row">
+
+            <div class="grid-col-1-of-2">
+
+                <app-ui-component>
+                    <div transclude-to="heroSection">
+                        <a routerLink="details/advanced-ui-components">
+                            <img class="hero-section-image"
+                                 src="/assets/hero_advanced_ui_components.png"
+                                 alt="advanced ui components">
+                        </a>
+                    </div>
+                    <div transclude-to="interfaceSection">
+                        <button type="text" class="btn-regular"
+                                ui-sref="app.details.detailsItem(
+                                    {name: 'advancedUIComponents'})">
+                            <h4>Advanced UI Components</h4>
+                        </button>
+                    </div>
+                </app-ui-component>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>

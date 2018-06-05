@@ -1,0 +1,110 @@
+<app-details-inner *ngIf="route.snapshot.params.name==='advanced-ui-components'"
+                   header="Advanced UI Components">
+
+    <div transclude-to="imagesSection">
+        <img src="assets/advanced_ui_components_1.png"
+             class="image image--for-small-devices">
+
+        <img src="assets/advanced_ui_components_2.png"
+             class="image image--for-small-devices">
+
+         <table class="images-section-for-large-devices">
+             <tr>
+                 <td>
+                     <img src="/assets/advanced_ui_components_1.png"
+                          class="image">
+                 </td>
+                 <td>
+                     <img src="/assets/advanced_ui_components_2.png"
+                          class="image">
+                 </td>
+             </tr>
+         </table>
+    </div>
+
+    <div transclude-to="contentSection">
+        <div class="subheaders">
+            <div class="row">
+                <h3 class="row-label">Project:</h3>
+                <p class="row-value">
+                    <a href="https://app.ballparq.io" target="_blank">
+                        Ballparq App
+                    </a>
+                </p>
+                <h3 class="row-label">Role:</h3>
+                <p class="row-value">UI Developer</p>
+            </div>
+            <div class="row u-margin-bottom-small">
+                <h3 class="row-label">Tech:</h3>
+                <p class="row-value">AngularJS, jQuery UI, HTML/CSS</p>
+            </div>
+        </div>
+        <div class="content u-margin-bottom-small">
+            <ul class="list">
+                <li class="list-item">
+                    Developed UI knob component for financial modeling app, where
+                    changes to knob or slider drive financial model's view updates.
+                </li>
+                <li class="list-item">
+                    Reused knob component directive template to great effect,
+                    throughout app. Also developed attribute directives for text
+                    formatting of data (e.g.-price, number percentage).
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</app-details-inner>
+
+
+<app-details-inner *ngIf="route.snapshot.params.name==='debateburg-app'"
+                   header="DebateBurg App">
+
+    <div transclude-to="imagesSection">
+        <!-- <video-module video-name="debateburg_app"
+                       class="video-module--for-small-devices">
+         </video-module> -->
+         <h1>Hello World!</h1>
+    </div>
+
+    <div transclude-to="contentSection">
+        <div class="details-module__subheaders">
+
+             <div class="details__row">
+                 <h3 class="details__row-label">Project:</h3>
+                 <p class="details__row-value">
+                     Debateburg App&nbsp;
+                     (<a href="https://github.com/RedKrovvy2013/Debateburg"
+                         target="_blank">
+                         GitHub
+                     </a>)
+                 </p>
+                 <h3 class="details__row-label">Role:</h3>
+                 <p class="details__row-value">Full-stack Web Developer</p>
+             </div>
+             <div class="details__row u-margin-bottom-small">
+                 <h3 class="details__row-label">Tech:</h3>
+                 <p class="details__row-value">React, Redux, socket.io, MongoDB, HTML/CSS</p>
+             </div>
+
+         </div>
+
+         <div class="details-module__content u-margin-bottom-small">
+
+             <ul class="details__list">
+                 <li class="details__list-item">
+                     Users can A) propose and accept/reject debate resolutions,
+                     B) debate against a competitor!, and C) check out past debates.
+                 </li>
+                 <li class="details__list-item">
+                     Utilized Redux reducer composition to create debate state engine,
+                     which allowed for the following usage spec: "During a debate,
+                     a user can only enter messages if their debate side (pro or con)
+                     is active".
+                 </li>
+             </ul>
+
+         </div>
+    </div>
+
+</app-details-inner>

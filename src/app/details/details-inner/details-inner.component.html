@@ -1,0 +1,24 @@
+<div class="details">
+
+    <div class="images-section">
+
+        <ng-content select="[transclude-to='imagesSection']"></ng-content>
+
+    </div>
+
+    <h4 class="header">
+        {{header}}
+    </h4>
+
+    <div class="content-section">
+
+        <ng-content select="[transclude-to='contentSection']"></ng-content>
+
+        <button class="back-btn btn-transparent"
+                ui-sref="app">
+            <h3>BACK</h3>
+        </button>
+
+    </div>
+
+</div>

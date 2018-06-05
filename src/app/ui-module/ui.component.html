@@ -1,0 +1,13 @@
+<div [ngClass]="{'ui-component': true, 'open': isOpen}">
+    <div class="hero-section">
+        <ng-content select="[transclude-to=heroSection]"></ng-content>
+    </div>
+    <div class="content-section-container">
+        <div class="content-section">
+            <ng-content select="[transclude-to=contentSection]"></ng-content>
+        </div>
+    </div>
+    <div class="interface-section">
+        <ng-content select="[transclude-to=interfaceSection]"></ng-content>
+    </div>
+</div>
